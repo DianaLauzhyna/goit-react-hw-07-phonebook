@@ -5,18 +5,18 @@ import InputName from '../InputName/InputName';
 
 const PhoneBookForm = ({ onInputContact }) => {
   const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+  const [phone, setPhone] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    onInputContact({ name, number });
+    onInputContact({ name, phone });
   };
 
   const handleChange = evt => {
     if (evt.target.name === 'name') {
       setName(evt.target.value);
     } else {
-      setNumber(evt.target.value);
+      setPhone(evt.target.value);
     }
   };
 
@@ -34,12 +34,12 @@ const PhoneBookForm = ({ onInputContact }) => {
       />
       <InputName
         type="tel"
-        name="number"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+        name="phone"
+        title="Phone phone must be digits and can contain spaces, dashes, parentheses and can start with +"
         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        mainTitle="Number"
+        mainTitle="Phone"
         defaultValue="+1"
-        value={number}
+        value={phone}
         handleChange={handleChange}
       />
       <Button type="submit">Add Contact</Button>
