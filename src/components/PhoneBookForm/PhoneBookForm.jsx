@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { useState } from 'react';
+
+
 import { Button, Form } from './PhoneBookForm.styled';
-import InputName from '../InputName/InputName';
+import InputName from '../UI/InputName/InputName';
 
 const PhoneBookForm = ({ onInputContact }) => {
   const [name, setName] = useState('');

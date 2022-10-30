@@ -1,18 +1,26 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+
 import PhoneBookForm from './PhoneBookForm/PhoneBookForm';
 import ContactsList from './ContactsList/ContactsList';
-import {Section, SectionHeader} from './Section/Section';
-import InputSearch from './InputSearch/InputSearch';
+
+import {Section, SectionHeader} from './UI/Section/Section';
+import InputSearch from './UI/InputSearch/InputSearch';
+import { Loader } from './UI/Loader/Loader';
+
 import { getContacts, getFilter } from 'redux/selectors';
-import { Wrapper } from './App.styled';
 import {
   fetchTasks,
   deleteContact,
   addContact,
   findByName,
-} from 'redux/operation';
-import { Loader } from './Loader/Loader';
+} from 'redux/contactsThunk';
+
+
+
+import { Wrapper, InputSearchStyle } from './App.styled';
+
 export const App = () => {
   const { items: contacts, isLoading, error } = useSelector(getContacts);
   const filter = useSelector(getFilter);
@@ -47,17 +55,9 @@ export const App = () => {
           nameSearch="Find contacts by name"
           onSearchName={findByNameFilter}
         />
-        <div
-          style={{
-            width: 'fit-content',
-            margin: ' 0 auto',
-            position: 'absolute',
-            top: '10px',
-            right: '10px',
-          }}
-        >
+        <InputSearchStyle>
           {isLoading && <Loader />}
-        </div>
+        </InputSearchStyle>
         <p>{error}</p>
         <ContactsList
           onClickDelete={onClickDelete}

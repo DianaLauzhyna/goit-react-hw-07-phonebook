@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 
 import { Label, Span, Input } from './Input.styled';
+
+
 const InputName = ({
   mainTitle,
   type,

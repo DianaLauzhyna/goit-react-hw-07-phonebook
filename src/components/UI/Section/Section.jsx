@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import {  SectionStyle, PageHeader } from './Section.styled';
 
 export const Section = ({ title, children }) => {

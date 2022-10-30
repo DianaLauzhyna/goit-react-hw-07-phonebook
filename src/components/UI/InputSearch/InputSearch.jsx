@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { Label, Input, Span } from 'components/InputName/Input.styled';
+import { Label, Input, Span } from 'components/UI/InputName/Input.styled';
 
 const InputSearch = ({ nameSearch, onSearchName }) => {
   return (

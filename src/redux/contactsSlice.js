@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchTasks, deleteContact, addContact, findByName } from './operation';
+import { fetchTasks, deleteContact, addContact, findByName } from './contactsThunk';
 
 const pendingHandler = (state, action) => {
   state.contacts.isLoading = true;
